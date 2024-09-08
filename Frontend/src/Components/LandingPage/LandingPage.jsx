@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Helmet } from 'react-helmet';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import home1 from './home1.png';
+import home1 from './home1.png'
 
 const LandingPage = () => {
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
@@ -49,10 +49,9 @@ const LandingPage = () => {
       <div className="min-h-screen bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white overflow-hidden relative">
         
         {/* Hero Section */}
-        <section className="relative flex flex-col md:flex-row justify-center items-center px-4 pt-24 md:px-8 md:pt-0 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col md:flex-row justify-center items-center px-8 pt-24 md:pt-0 overflow-hidden">
           {/* Background Bubbles */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            {/* Background bubbles */}
             <motion.div
               className="absolute w-24 h-24 bg-white rounded-full opacity-20"
               style={{ top: '10%', left: '20%' }}
@@ -85,18 +84,18 @@ const LandingPage = () => {
             variants={containerVariants}
             initial="hidden"
             animate={heroInView ? 'visible' : 'hidden'}
-            className="text-center md:text-left md:w-1/2 px-4 md:px-0"
+            className="md:w-1/2 text-center md:text-left"
           >
-            <motion.h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 md:mb-8">
+            <motion.h1 className="text-5xl md:text-7xl font-extrabold mb-8">
               Save a Life, <br /> Donate Blood
             </motion.h1>
-            <motion.p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-10">
+            <motion.p className="text-lg md:text-2xl mb-10">
               Join our mission to help those in need by becoming a blood donor today!
             </motion.p>
             <motion.button 
               whileHover={{ scale: 1.1, backgroundColor: '#e53e3e' }}
               whileTap={{ scale: 0.9 }}
-              className="bg-red-600 px-6 py-3 rounded-full text-lg hover:bg-red-700 transition"
+              className="bg-red-600 px-8 py-4 rounded-full text-lg hover:bg-red-700 transition"
             >
               Donate Now <AiOutlineArrowRight className="inline ml-2" />
             </motion.button>
@@ -104,7 +103,7 @@ const LandingPage = () => {
 
           {/* Right-Side Image */}
           <motion.div
-            className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0"
+            className="md:w-1/2 flex justify-center md:justify-end"
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}
@@ -112,24 +111,24 @@ const LandingPage = () => {
             <img 
               src={home1} 
               alt="Donate Blood" 
-              className="w-full h-auto object-contain md:w-2/3 rounded-lg"
+              className="w-2/4  h-2/5 object-contain md:w-2/3 mb-20 rounded-lg "
             />
           </motion.div>
         </section>
 
         {/* Info Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 md:py-16 px-4 md:px-8" ref={infoRef}>
+        <section className="grid justify-center grid-cols-1 md:grid-cols-2 gap-8 py-16 px-8 " ref={infoRef}>
           <motion.div
             variants={staggeredVariants}
             initial="hidden"
             animate={infoInView ? 'visible' : 'hidden'}
-            className="space-y-8"
+            className="flex justify-center w-screen space-x-8"
           >
             <motion.div
               variants={childVariants}
-              className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg"
+              className="bg-white flex-col bg-opacity-20 p-8 rounded-lg shadow-lg"
             >
-              <h2 className="text-2xl font-bold mb-4">Why Donate Blood?</h2>
+              <h2 className="text-3xl font-bold mb-4">Why Donate Blood?</h2>
               <p>
                 Donating blood is one of the easiest ways to make a big impact in someone’s life. Your donation can save up to three lives!
               </p>
@@ -137,9 +136,9 @@ const LandingPage = () => {
 
             <motion.div
               variants={childVariants}
-              className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg"
+              className="bg-white flex-col bg-opacity-20 p-8 pr-10 rounded-lg shadow-lg"
             >
-              <h2 className="text-2xl font-bold mb-4">Who Needs Blood?</h2>
+              <h2 className="text-3xl font-bold mb-4">Who Needs Blood?</h2>
               <p>
                 Accident victims, cancer patients, and many others depend on blood donations every day. Be a hero by donating.
               </p>
@@ -148,12 +147,12 @@ const LandingPage = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-8 md:py-16 px-4 md:px-8 bg-pink-50" ref={featuresRef}>
+        <section className="py-16 px-8 bg-pink-50" ref={featuresRef}>
           <motion.h2
             variants={containerVariants}
             initial="hidden"
             animate={featuresInView ? 'visible' : 'hidden'}
-            className="text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800"
+            className="text-4xl font-bold text-center mb-12 text-gray-800"
           >
             Our Key Features
           </motion.h2>
@@ -165,9 +164,9 @@ const LandingPage = () => {
           >
             <motion.div
               variants={childVariants}
-              className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
+              className="bg-white text-zinc-950 p-8 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-bold mb-4">Easy Registration</h3>
+              <h3 className="text-2xl font-bold mb-4">Easy Registration</h3>
               <p className='text-zinc-600'>
                 Quickly sign up to become a blood donor with our streamlined registration process.
               </p>
@@ -175,139 +174,125 @@ const LandingPage = () => {
 
             <motion.div
               variants={childVariants}
-              className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
+              className="bg-white text-zinc-950 p-8 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-bold mb-4">Convenient Locations</h3>
-              <p className='text-zinc-600'>
-                Find a nearby donation center or mobile unit to make donating easier than ever.
+              <h3 className="text-2xl font-bold mb-4">Convenient Locations</h3>
+              <p className='text-zinc-600' >
+                Find a nearby donation center with our easy-to-use locator tool.
               </p>
             </motion.div>
 
             <motion.div
               variants={childVariants}
-              className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
+              className="bg-white text-zinc-950 p-8 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-bold mb-4">Flexible Scheduling</h3>
+              <h3 className="text-2xl font-bold mb-4">Impactful Results</h3>
               <p className='text-zinc-600'>
-                Choose a time that works best for you to ensure a smooth donation experience.
+                See how your donation is making a difference through our impact reports.
               </p>
             </motion.div>
           </motion.div>
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-8 md:py-16 px-4 md:px-8" ref={testimonialsRef}>
+        <section className="py-16 px-8 bg-gray-100" ref={testimonialsRef}>
           <motion.h2
             variants={containerVariants}
             initial="hidden"
             animate={testimonialsInView ? 'visible' : 'hidden'}
-            className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800"
+            className="text-4xl font-bold text-center mb-12 text-gray-800"
           >
-            What Our Donors Say
+            What Donors Are Saying
           </motion.h2>
           <motion.div
             variants={staggeredVariants}
             initial="hidden"
             animate={testimonialsInView ? 'visible' : 'hidden'}
-            className="flex flex-col md:flex-row gap-8 overflow-hidden"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            <motion.div
-              variants={childVariants}
-              className="bg-white text-zinc-950 p-6 rounded-lg shadow-lg flex-1"
-            >
-              <p>
-                "Donating blood was a simple way to help those in need. It felt great to make a difference!"
+            <motion.div variants={childVariants} className="bg-white p-8 rounded-lg shadow-md">
+              <p className="mb-4 text-zinc-700">
+                "Donating blood was such a rewarding experience! I feel great knowing that my donation can save lives."
+                {/* profile image small and feedback wors with star rating */}
               </p>
-              <p className="mt-4 font-bold">- Jane Doe</p>
+              <p className="font-bold text-pink-700">- John D.</p>
             </motion.div>
 
-            <motion.div
-              variants={childVariants}
-              className="bg-white text-zinc-950 p-6 rounded-lg shadow-lg flex-1"
-            >
-              <p>
-                "The process was quick and easy, and the staff were very supportive. I’m glad I could contribute."
+            <motion.div variants={childVariants} className="bg-white p-8 rounded-lg shadow-md">
+              <p className="mb-4  text-zinc-700">
+                "The process was quick, easy, and the staff made me feel comfortable throughout."
               </p>
-              <p className="mt-4 font-bold">- John Smith</p>
+              <p className="font-bold text-pink-700">- Sarah K.</p>
+            </motion.div>
+
+            <motion.div variants={childVariants} className="bg-white p-8 rounded-lg shadow-md">
+              <p className="mb-4  text-zinc-700">
+                "I never realized how important blood donation was until I needed it myself. Now, I'm a regular donor!"
+              </p>
+              <p className="font-bold  text-pink-700">- Alex M.</p>
             </motion.div>
           </motion.div>
         </section>
 
         {/* Call-to-Action Section */}
-        <section className="py-8 md:py-16 px-4 md:px-8 bg-pink-100" ref={ctaRef}>
-          <motion.div
-            variants={contactVariants}
+        <section className="py-16 px-8 bg-pink-600 text-white text-center" ref={ctaRef}>
+          <motion.h2
+            variants={containerVariants}
             initial="hidden"
             animate={ctaInView ? 'visible' : 'hidden'}
-            className="text-center bg-white p-8 rounded-lg shadow-lg"
+            className="text-4xl font-bold mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Make a Difference?
-            </h2>
-            <p className="text-lg md:text-xl mb-6">
-              Join our community of heroes and start your donation journey today.
-            </p>
-            <a 
-              href="/donate" 
-              className="bg-red-600 text-white px-6 py-3 rounded-full text-lg hover:bg-red-700 transition"
-            >
-              Donate Now
-            </a>
-          </motion.div>
+            Ready to Make a Difference?
+          </motion.h2>
+          <motion.button
+            whileHover={{ scale: 1.1, backgroundColor: '#e53e3e' }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-white text-pink-600 px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition"
+          >
+            Become a Donor <AiOutlineArrowRight className="inline ml-2" />
+          </motion.button>
         </section>
 
         {/* Contact Section */}
-        <section className="py-8 md:py-16 px-4 md:px-8 bg-gray-50" ref={contactRef}>
+        <section className="py-16 px-8 bg-gray-900 text-white text-center" ref={contactRef}>
           <motion.h2
             variants={containerVariants}
             initial="hidden"
             animate={contactInView ? 'visible' : 'hidden'}
-            className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800"
+            className="text-4xl font-bold mb-8"
           >
-            Get in Touch
+            Contact Us
           </motion.h2>
-          <div className="max-w-2xl mx-auto">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-lg font-medium mb-2">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  className="w-full p-3 border border-gray-300 rounded-lg" 
-                  required 
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-lg font-medium mb-2">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  className="w-full p-3 border border-gray-300 rounded-lg" 
-                  required 
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-lg font-medium mb-2">Message</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows="4" 
-                  className="w-full p-3 border border-gray-300 rounded-lg" 
-                  required
-                ></textarea>
-              </div>
-              <button 
-                type="submit" 
-                className="bg-red-600 text-white px-6 py-3 rounded-full text-lg hover:bg-red-700 transition"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+          <motion.form
+            variants={contactVariants}
+            initial="hidden"
+            animate={contactInView ? 'visible' : 'hidden'}
+            className="max-w-xl mx-auto"
+          >
+            <input
+              type="text"
+              className="w-full mb-4 p-4 rounded-lg bg-gray-800 text-white"
+              placeholder="Your Name"
+            />
+            <input
+              type="email"
+              className="w-full mb-4 p-4 rounded-lg bg-gray-800 text-white"
+              placeholder="Your Email"
+            />
+            <textarea
+              className="w-full mb-4 p-4 rounded-lg bg-gray-800 text-white"
+              placeholder="Your Message"
+              rows="4"
+            />
+            <motion.button
+              whileHover={{ scale: 1.1, backgroundColor: '#e53e3e' }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-pink-600 px-8 py-4 rounded-full text-lg hover:bg-pink-700 transition"
+            >
+              Send Message
+            </motion.button>
+          </motion.form>
         </section>
-        
       </div>
     </>
   );
