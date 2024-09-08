@@ -117,16 +117,16 @@ const LandingPage = () => {
         </section>
 
         {/* Info Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 px-8" ref={infoRef}>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 px-8" ref={infoRef}>
   <motion.div
     variants={staggeredVariants}
     initial="hidden"
     animate={infoInView ? 'visible' : 'hidden'}
-    className="flex flex-col justify-center items-center md:items-start"
+    className="flex flex-col justify-center items-center md:items-start w-full"
   >
     <motion.div
       variants={childVariants}
-      className="bg-white flex-col bg-opacity-20 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto md:mx-0"
+      className="bg-white flex-col bg-opacity-20 p-8 rounded-lg shadow-lg w-full md:w-11/12 lg:w-10/12 mx-auto"
     >
       <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Donate Blood?</h2>
       <p className="text-base md:text-lg">
@@ -139,11 +139,11 @@ const LandingPage = () => {
     variants={staggeredVariants}
     initial="hidden"
     animate={infoInView ? 'visible' : 'hidden'}
-    className="flex flex-col justify-center items-center md:items-start"
+    className="flex flex-col justify-center items-center md:items-start w-full"
   >
     <motion.div
       variants={childVariants}
-      className="bg-white flex-col bg-opacity-20 p-8 pr-10 rounded-lg shadow-lg w-full max-w-md mx-auto md:mx-0"
+      className="bg-white flex-col bg-opacity-20 p-8 pr-10 rounded-lg shadow-lg w-full md:w-11/12 lg:w-10/12 mx-auto"
     >
       <h2 className="text-2xl md:text-3xl font-bold mb-4">Who Needs Blood?</h2>
       <p className="text-base md:text-lg">
