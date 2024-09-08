@@ -1,0 +1,5 @@
+npm install react-tsparticles
+npm install framer-motion
+npm install react-router-dom
+npm install tailwindcss postcss autoprefixer
+yarn add tailwindcss postcss autoprefixer
