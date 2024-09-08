@@ -49,9 +49,10 @@ const LandingPage = () => {
       <div className="min-h-screen bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white overflow-hidden relative">
         
         {/* Hero Section */}
-        <section className="relative min-h-screen flex flex-col md:flex-row justify-center items-center px-4 pt-24 md:px-8 md:pt-0 overflow-hidden">
+        <section className="relative flex flex-col md:flex-row justify-center items-center px-4 pt-24 md:px-8 md:pt-0 overflow-hidden">
           {/* Background Bubbles */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            {/* Background bubbles */}
             <motion.div
               className="absolute w-24 h-24 bg-white rounded-full opacity-20"
               style={{ top: '10%', left: '20%' }}
