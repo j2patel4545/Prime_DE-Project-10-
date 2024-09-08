@@ -117,34 +117,41 @@ const LandingPage = () => {
         </section>
 
         {/* Info Section */}
-        <section className="grid justify-center grid-cols-1 md:grid-cols-2 gap-8 py-16 px-8 " ref={infoRef}>
-          <motion.div
-            variants={staggeredVariants}
-            initial="hidden"
-            animate={infoInView ? 'visible' : 'hidden'}
-            className="flex justify-center w-screen space-x-8"
-          >
-            <motion.div
-              variants={childVariants}
-              className="bg-white flex-col bg-opacity-20 p-8 rounded-lg shadow-lg"
-            >
-              <h2 className="text-3xl font-bold mb-4">Why Donate Blood?</h2>
-              <p>
-                Donating blood is one of the easiest ways to make a big impact in someone’s life. Your donation can save up to three lives!
-              </p>
-            </motion.div>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 px-8" ref={infoRef}>
+  <motion.div
+    variants={staggeredVariants}
+    initial="hidden"
+    animate={infoInView ? 'visible' : 'hidden'}
+    className="flex flex-col justify-center items-center md:items-start"
+  >
+    <motion.div
+      variants={childVariants}
+      className="bg-white flex-col bg-opacity-20 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto md:mx-0"
+    >
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Donate Blood?</h2>
+      <p className="text-base md:text-lg">
+        Donating blood is one of the easiest ways to make a big impact in someone’s life. Your donation can save up to three lives!
+      </p>
+    </motion.div>
+  </motion.div>
 
-            <motion.div
-              variants={childVariants}
-              className="bg-white flex-col bg-opacity-20 p-8 pr-10 rounded-lg shadow-lg"
-            >
-              <h2 className="text-3xl font-bold mb-4">Who Needs Blood?</h2>
-              <p>
-                Accident victims, cancer patients, and many others depend on blood donations every day. Be a hero by donating.
-              </p>
-            </motion.div>
-          </motion.div>
-        </section>
+  <motion.div
+    variants={staggeredVariants}
+    initial="hidden"
+    animate={infoInView ? 'visible' : 'hidden'}
+    className="flex flex-col justify-center items-center md:items-start"
+  >
+    <motion.div
+      variants={childVariants}
+      className="bg-white flex-col bg-opacity-20 p-8 pr-10 rounded-lg shadow-lg w-full max-w-md mx-auto md:mx-0"
+    >
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Who Needs Blood?</h2>
+      <p className="text-base md:text-lg">
+        Accident victims, cancer patients, and many others depend on blood donations every day. Be a hero by donating.
+      </p>
+    </motion.div>
+  </motion.div>
+</section>
 
         {/* Features Section */}
         <section className="py-16 px-8 bg-pink-50" ref={featuresRef}>
