@@ -153,7 +153,7 @@ const LandingPage = () => {
             variants={containerVariants}
             initial="hidden"
             animate={featuresInView ? 'visible' : 'hidden'}
-            className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800"
+            className="text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800"
           >
             Our Key Features
           </motion.h2>
@@ -167,7 +167,7 @@ const LandingPage = () => {
               variants={childVariants}
               className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
             >
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Easy Registration</h3>
+              <h3 className="text-xl font-bold mb-4">Easy Registration</h3>
               <p className='text-zinc-600'>
                 Quickly sign up to become a blood donor with our streamlined registration process.
               </p>
@@ -177,7 +177,7 @@ const LandingPage = () => {
               variants={childVariants}
               className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
             >
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Convenient Locations</h3>
+              <h3 className="text-xl font-bold mb-4">Convenient Locations</h3>
               <p className='text-zinc-600'>
                 Find a nearby donation center or mobile unit to make donating easier than ever.
               </p>
@@ -187,7 +187,7 @@ const LandingPage = () => {
               variants={childVariants}
               className="bg-white text-zinc-950 p-6 rounded-lg shadow-md"
             >
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Flexible Scheduling</h3>
+              <h3 className="text-xl font-bold mb-4">Flexible Scheduling</h3>
               <p className='text-zinc-600'>
                 Choose a time that works best for you to ensure a smooth donation experience.
               </p>
