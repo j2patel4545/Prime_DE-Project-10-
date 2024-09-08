@@ -98,13 +98,13 @@ const Navbar = () => {
               <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             </li>
             <li>
-              <Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+              <Link to="/" onClick={() => setIsMenuOpen(false)}>Services</Link>
             </li>
             <li>
-              <Link to="/donate" onClick={() => setIsMenuOpen(false)}>Donate</Link>
+              <Link to="/registration" onClick={() => setIsMenuOpen(false)}>Sign up</Link>
             </li>
             <li>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link to="/login" onClick={() => setIsMenuOpen(false)}>Sign in</Link>
             </li>
           </ul>
           <motion.button
