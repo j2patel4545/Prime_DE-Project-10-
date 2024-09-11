@@ -45,7 +45,7 @@ function DonerRegistration() {
     });
 
     try {
-      const response = await axios.post('http://localhost:5001/api/users/register', formData);
+      const response = await axios.post('https://backend-donation.onrender.com/api/users/register', formData);
       setToast({ message: 'Registration successful!', type: 'success' });
       navigate('/login');
       setFormData({
