@@ -19,7 +19,7 @@ const Dashboard = () => {
     const fetchUserProfile = async () => {
       try {
         const token = localStorage.getItem('token'); // Assume token is stored in localStorage
-        const response = await axios.get('http://localhost:5001/api/users/profile', {
+        const response = await axios.get('https://backend-donation.onrender.com/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsername(response.data.username); // Set username from the API response
