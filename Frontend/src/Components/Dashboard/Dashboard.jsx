@@ -10,12 +10,7 @@ const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null); // State to hold user profile data
   const navigate = useNavigate(); // Initialize navigate
 
- console.log(username);
- console.log(userProfile);
- 
- 
   useEffect(() => {
-    // Fetch user profile data when the component mounts
     const fetchUserProfile = async () => {
       try {
         const token = localStorage.getItem('token'); // Assume token is stored in localStorage
@@ -57,10 +52,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen bg-pink-100">
+    <div className="flex h-screen flex-col md:flex-row bg-pink-100">
       {/* Sidebar */}
       <motion.div
-        className="w-64 bg-pink-700 text-white"
+        className="md:w-64 w-full bg-pink-700 text-white md:static fixed bottom-0 md:bottom-auto md:h-full"
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
@@ -87,15 +82,13 @@ const Dashboard = () => {
       <div className="flex-1 flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center bg-white shadow-md px-6 py-3">
-          {/* Icons and Search Bar */}
           <div className="flex items-center space-x-6">
-            {/* Home Icon navigates to "/" */}
+            {/* Home Icon */}
             <FaHome
               className="text-pink-700 text-xl cursor-pointer"
               title="Home"
-              onClick={() => navigate('/')} // Navigate to home ("/") on click
+              onClick={() => navigate('/')}
             />
-            
             {/* Search Bar */}
             <div className="relative">
               <input
@@ -105,7 +98,6 @@ const Dashboard = () => {
               />
               <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             </div>
-            
             <FaEnvelope className="text-pink-700 text-xl cursor-pointer" title="Messages" />
           </div>
 
@@ -140,7 +132,7 @@ const Dashboard = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          key={activeContent} // This ensures content is animated when it changes
+          key={activeContent} // Ensures content is animated when it changes
         >
           {renderContent()}
         </motion.div>
@@ -153,12 +145,11 @@ const Dashboard = () => {
 const DashboardContent = () => {
   return (
     <motion.div
-      className="grid grid-cols-4 gap-6"
+      className="grid grid-cols-1 md:grid-cols-4 gap-6"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Example Cards */}
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold text-pink-700">Total Donations</h3>
         <p className="text-3xl mt-2 font-bold">53k</p>
@@ -183,68 +174,6 @@ const DashboardContent = () => {
   );
 };
 
-// Other content components
-const DonorList = () => {
-  return (
-    <motion.div
-      className="bg-white p-6 rounded-lg shadow-md"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h3 className="text-xl font-bold text-pink-700">Donor List</h3>
-      <p className="text-sm mt-2 text-gray-600">Here is the list of all donors.</p>
-      {/* List or Table of donors */}
-    </motion.div>
-  );
-};
-
-const DonationRecords = () => {
-  return (
-    <motion.div
-      className="bg-white p-6 rounded-lg shadow-md"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h3 className="text-xl font-bold text-pink-700">Donation Records</h3>
-      <p className="text-sm mt-2 text-gray-600">Here are the donation records.</p>
-      {/* List or Table of donation records */}
-    </motion.div>
-  );
-};
-
-const Notifications = () => {
-  return (
-    <motion.div
-      className="bg-white p-6 rounded-lg shadow-md"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h3 className="text-xl font-bold text-pink-700">Notifications</h3>
-      <p className="text-sm mt-2 text-gray-600">Here are your notifications.</p>
-      {/* List of notifications */}
-    </motion.div>
-  );
-};
-
-const Profile = ({ userProfile }) => {
-  return (
-    <motion.div
-      className="bg-white p-6 rounded-lg shadow-md"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h3 className="text-xl font-bold text-pink-700">Profile</h3>
-      <div className="mt-4">
-        <p className="text-sm text-gray-600">Username: {userProfile?.username}</p>
-        <p className="text-sm text-gray-600">Email: {userProfile?.email}</p>
-        {/* Add more user profile fields here */}
-      </div>
-    </motion.div>
-  );
-};
+// Other content components (DonorList, DonationRecords, Notifications, Profile)
 
 export default Dashboard;
